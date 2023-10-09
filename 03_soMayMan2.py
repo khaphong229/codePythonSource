@@ -13,11 +13,21 @@ if __name__ == '__main__':
 		for j in range (0,length):
 			# tổng các chữ số của số đã nhập vd 666 => 6+6+6 = 18 
 			sum+=int(s[j])
-			
+		
 			if sum==9:
 				return 1
 			else:
+				while sum>=10:
+					a=sum
+					sum=0
+					while a>0:
+						sum+=(a%10)
+						a/=10
+				if sum==9:
+					return 1
+				else:
+					return 0
 
 	# chạy số lần đã nhập
 	for i in range (1,n+1):
-		solve()
+		print(solve())
